@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Peludo - Próximas Citas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/proximas_citas.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-paw"></i>
+            <span>Mundo Peludo</span>
+        </div>
+
+        <div class="sidebar-menu">
+            <i class="fa-regular fa-calendar"></i>
+            <div class="menu-btn">Proximas citas</div>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header>
+            <div class="action-item">
+                <a href="consulta.html"><div class="icon-box"><i class="fa-solid fa-check"></i></a></div>
+                <span class="action-text">Iniciar consulta</span>
+            </div>
+
+            <div class="action-item">
+                <a href="historia_clinica_general.html"><div class="icon-box"><i class="fa-solid fa-clipboard-list"></i></a></div>
+                <span class="action-text">Historial medico</span>
+            </div>
+
+            <div class="action-item">
+                <a href="inicio_doctor.html"><div class="icon-box"><i class="fa-solid fa-xmark"></i></a></div>
+                <span class="action-text">Salir</span>
+            </div>
+        </header>
+
+        <div class="schedule-container">
+            
+            <h1 class="page-title">Proximas citas</h1>
+
+            <div class="filter-section">
+                
+                <div class="filter-group">
+                    <label for="date-filter">Fecha</label>
+                    <div class="input-with-icon">
+                        <input type="date" id="date-filter" value="2025-10-30">
+                        <i class="fa-regular fa-calendar date-icon"></i>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label for="status-filter">Estado</label>
+                    <select id="status-filter">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="confirmada">Confirmada</option>
+                        <option value="cancelada">Cancelada</option>
+                        <option value="pendiente">Pendiente</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Veterinario</th>
+                        <th>Fecha y hora</th>
+                        <th>Motivo</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Max</td>
+                        <td>Jose Hernandez</td>
+                        <td>25/10/2025 11:00 AM</td>
+                        <td>No come</td>
+                        <td>Confirmada</td>
+                    </tr>
+                    <tr>
+                        <td>Chayanne</td>
+                        <td>Ana Zamora</td>
+                        <td>28/10/2025 10:00 AM</td>
+                        <td>Cojera</td>
+                        <td>Confirmada</td>
+                    </tr>
+                    <tr>
+                        <td>Lola</td>
+                        <td>Ana Zamora</td>
+                        <td>29/10/2025 1:00 PM</td>
+                        <td>Consulta general</td>
+                        <td>Cancelada</td>
+                    </tr>
+                    <tr>
+                        <td>Thor</td>
+                        <td>Jose Hernandez</td>
+                        <td>30/10/2025 4:00 PM</td>
+                        <td>Consulta Post-cirugia</td>
+                        <td>Pendiente</td>
+                    </tr>
+                    <tr>
+                        <td>Once</td>
+                        <td>Jose Hernandez</td>
+                        <td>31/10/2025 6:00 PM</td>
+                        <td>Consulta General</td>
+                        <td>Confirmada</td>
+                    </tr>
+                    <tr>
+                        <td>Geo</td>
+                        <td>Ana Zamora</td>
+                        <td>02/11/2025 11:00 AM</td>
+                        <td>Consulta Post-cirugia</td>
+                        <td>Pendiente</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="pagination">
+                <a href="#" class="prev">‹</a>
+                <a href="#" class="page active">1</a>
+                <a href="#" class="page">2</a>
+                <a href="#" class="page">3</a>
+                <a href="#" class="page">4</a>
+                <a href="#" class="page">5</a>
+                <a href="#" class="next">›</a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,257 @@
+/* --- RESET BÁSICO --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            background-color: white;
+        }
+
+        /* --- SIDEBAR (Mismo estilo) --- */
+        .sidebar {
+            width: 280px;
+            background-color: white;
+            border-right: 1px solid #ccc;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .logo i {
+            color: #009688;
+            font-size: 32px;
+        }
+
+        .sidebar-menu {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .sidebar-menu a {
+            text-decoration: none;
+            color: #000;
+        }
+        .sidebar-menu i {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .menu-btn {
+            background-color: #83a5c2;
+            color: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            flex-grow: 1;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* --- MAIN CONTENT --- */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* --- HEADER --- */
+        header {
+            height: 130px;
+            border-bottom: 1px solid #aaa;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 300px;
+            gap: 350px;
+            background-color: white;
+        }
+
+        .action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            background-color: #7da0c0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .icon-box i {
+            font-size: 28px;
+            color: #111;
+        }
+
+        .action-text {
+            font-size: 13px;
+            color: #000;
+            font-weight: 500;
+        }
+
+        /* --- CONTENIDO ESPECÍFICO DE HISTORIALES --- */
+        .history-container {
+            padding: 30px 50px;
+            flex: 1;
+            overflow-y: auto;
+        }
+
+        /* Título y Barra de Búsqueda */
+        .history-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .history-header h2 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .search-bar {
+            background-color: #83a5c2; /* Color azul grisáceo */
+            display: flex;
+            align-items: center;
+            padding: 10px 15px;
+            border-radius: 8px;
+            width: 450px;
+            gap: 10px;
+        }
+
+        .search-bar i {
+            font-size: 18px;
+            color: #000;
+        }
+
+        .search-bar input {
+            background: transparent;
+            border: none;
+            outline: none;
+            width: 100%;
+            font-size: 14px;
+            color: #222;
+        }
+        
+        .search-bar input::placeholder {
+            color: #333;
+        }
+
+        /* Lista de Tarjetas */
+        .records-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .record-card {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .card-top {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .pet-name {
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .last-date {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .doctor-info {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            font-size: 14px;
+            color: #000;
+            line-height: 1.4;
+            margin-bottom: 10px;
+        }
+
+        .card-bottom {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .details-link {
+            color: #009688;
+            text-decoration: underline;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        /* Paginación */
+        .pagination {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            font-family: Arial, sans-serif;
+        }
+
+        .pagination a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        /* Número seleccionado */
+        .pagination .active {
+            background-color: #009383;
+            color: #fff;
+            border-color: #009383;
+        }
+
+        /* Hover en los demás */
+            .pagination a:not(.active):hover {
+            color: #009383;
+            border-color: #009383;
+        }
+
+        /* Opcional: cursor deshabilitado para flechas */
+        .pagination .disabled {
+            opacity: 0.4;
+            pointer-events: none;
+        }

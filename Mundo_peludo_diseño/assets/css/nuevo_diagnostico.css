@@ -1,0 +1,246 @@
+     /* --- ESTILOS BASE (Mismos que antes) --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        /* --- SIDEBAR (Reutilizado) --- */
+        .sidebar {
+            width: 280px;
+            background-color: white;
+            border-right: 1px solid #ccc;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .sidebar-menu a {
+            text-decoration: none;
+        }
+        
+        .logo i {
+            color: #009688;
+            font-size: 32px;
+        }
+
+        .sidebar-menu {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .sidebar-menu i {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .menu-btn {
+            background-color: #83a5c2;
+            color: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            flex-grow: 1;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* --- MAIN CONTENT & HEADER (Reutilizado) --- */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            height: 130px;
+            border-bottom: 1px solid #aaa;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 150px;
+            gap: 360px;
+            background-color: white;
+        }
+
+        .action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            background-color: #7da0c0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .icon-box i {
+            font-size: 28px;
+            color: #111;
+        }
+
+        .action-text {
+            font-size: 13px;
+            color: #000;
+            font-weight: 500;
+        }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .detail-container {
+            padding: 20px 80px;
+            flex: 1;
+            overflow-y: auto; 
+        }
+
+        .page-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            margin-top: 10px;
+        }
+
+        /* FILA DE BOTONES TEAL */
+        .top-info-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+
+        .teal-btn {
+            background-color: #1abc9c;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        /* GRID DE CUATRO CUADRANTES */
+        .four-quadrant-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(2, minmax(200px, 1fr));
+            gap: 30px;
+            height: 80%;
+        }
+
+        .info-box {
+            background-color: #f1f5f9; /* Fondo Gris Azulado */
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .info-box h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* --- ESTILO CLAVE PARA EL TEXTAREA --- */
+        .info-box textarea {
+            flex-grow: 1; /* Ocupa todo el espacio restante dentro de la caja */
+            width: 100%;
+            border: none;
+            background-color: transparent; /* Permite que se vea el fondo de la caja */
+            resize: none; /* Deshabilita la opción de arrastrar para redimensionar */
+            font-family: inherit;
+            font-size: 14px;
+            color: #333;
+            outline: none; /* Quitar el contorno al hacer focus */
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente como en la imagen */
+            display: none; /* Inicialmente oculto */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 500px;
+            transform: scale(0.9); /* Para que no sea demasiado grande */
+        }
+
+        .modal-icon i {
+            font-size: 60px;
+            color: #1abc9c; /* Verde/Teal de la imagen */
+            margin-bottom: 20px;
+            border: 4px solid #1abc9c;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .modal-message {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        .modal-button {
+            background-color: #1abc9c; /* Verde/Teal del botón Aceptar */
+            color: white;
+            border: none;
+            padding: 10px 40px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .modal-button:hover {
+            background-color: #16a085;
+        }
+
+        /* Clase para mostrar el modal */
+        .modal-overlay.visible {
+            display: flex;
+        }

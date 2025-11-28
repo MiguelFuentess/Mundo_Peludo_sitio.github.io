@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundo Peludo - Diagnóstico Editable</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/nuevo_diagnostico.css">
+</head>
+<body>
+
+    <aside class="sidebar">
+        <div class="logo">
+            <i class="fa-solid fa-paw"></i>
+            <span>Mundo Peludo</span>
+        </div>
+
+        <div class="sidebar-menu">
+            <i class="fa-regular fa-calendar"></i>
+            <a href="proximas_citas.html"><div class="menu-btn">Proximas citas</div></a>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        
+        <header>
+            <div class="action-item">
+                <a href="consulta.html"><div class="icon-box"><i class="fa-solid fa-check"></i></a></div>
+                <span class="action-text">Iniciar consulta</span>
+            </div>
+            <div class="action-item" id="btn-guardar">
+                <div class="icon-box"><i class="fa-solid fa-floppy-disk"></i></div>
+                <span class="action-text">Guardar</span>
+            </div>
+            <div class="action-item">
+                <a href="historia_clinica_general.html"><div class="icon-box"><i class="fa-solid fa-clipboard-list"></i></a></div>
+                <span class="action-text">Historial medico</span>
+            </div>
+            <div class="action-item">
+                <a href="inicio_doctor.html"><div class="icon-box"><i class="fa-solid fa-xmark"></i></a></div>
+                <span class="action-text">Salir</span>
+            </div>
+        </header>
+
+        <div class="detail-container">
+            
+            <h1 class="page-title">Historial medico de Thor</h1>
+
+            <div class="top-info-row">
+                <a href="Histroia_clinica_especifica.html"><button class="teal-btn">Citas anteriores</button></a>
+                <button class="teal-btn">Nuevo diagnostico</button>
+            </div>
+
+            <div class="four-quadrant-grid">
+                
+                <div class="info-box">
+                    <h4>Motivo de la consulta</h4>
+                    <textarea placeholder="Introduzca el motivo de la consulta..."></textarea>
+                </div>
+                
+                <div class="info-box">
+                    <h4>Observaciones</h4>
+                    <textarea placeholder="Introduzca observaciones generales..."></textarea>
+                </div>
+                
+                <div class="info-box">
+                    <h4>Tratamiento</h4>
+                    <textarea placeholder="Introduzca el tratamiento, plan y posología..."></textarea>
+                </div>
+
+                <div class="info-box">
+                    <h4>Medicacion</h4>
+                    <textarea placeholder="Detalle la medicación administrada..."></textarea>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fa-solid fa-check"></i> </div>
+            <p class="modal-message">
+                Informacion guardada con exito
+            </p>
+            <button class="modal-button" id="btn-aceptar">Aceptar</button>
+        </div>
+    </div>
+
+    <script src="/js/Guardado_exitoso.js"> </script>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+ /* --- RESET BÁSICO --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            overflow: hidden; /* Evita scroll en todo el cuerpo, solo en el contenido */
+        }
+
+        /* --- SIDEBAR (Igual que antes) --- */
+        .sidebar {
+            width: 280px;
+            background-color: white;
+            border-right: 1px solid #ccc;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .logo i {
+            color: #009688;
+            font-size: 32px;
+        }
+
+        .sidebar-menu {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .sidebar-menu a {
+            text-decoration: none;
+            color: #000;
+        }
+        .sidebar-menu i {
+            font-size: 24px;
+            color: #333;
+        }
+
+        .menu-btn {
+            background-color: #83a5c2;
+            color: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            flex-grow: 1;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* --- MAIN CONTENT --- */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+        }
+
+        /* --- HEADER ACTUALIZADO --- */
+        header {
+            height: 130px;
+            border-bottom: 1px solid #aaa;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 150px;
+            gap: 360px;
+            background-color: white;
+        }
+
+        .action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            background-color: #7da0c0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .icon-box i {
+            font-size: 28px;
+            color: #111;
+        }
+
+        .action-text {
+            font-size: 13px;
+            color: #000;
+            font-weight: 500;
+        }
+
+        /* --- FORMULARIO GRID --- */
+        .form-container {
+            flex: 1;
+            padding: 20px 40px;
+            overflow-y: auto; /* Permite scroll si la pantalla es pequeña */
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* 3 columnas iguales */
+            column-gap: 30px;
+        }
+
+        /* Títulos de sección */
+        h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #000;
+            font-weight: 700;
+        }
+
+        /* Estilos de los Inputs */
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 15px; /* Espacio vertical entre inputs */
+        }
+
+        input[type="text"], 
+        input[type="email"],
+        textarea {
+            width: 100%;
+            background-color: #eff6fa; /* El color gris azulado claro */
+            border: none;
+            padding: 12px 15px;
+            border-radius: 6px;
+            font-size: 14px;
+            color: #555;
+            outline: none;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: #888;
+        }
+
+        textarea {
+            resize: none;
+            height: 140px; /* Altura de las cajas de texto grandes */
+            font-family: inherit;
+        }
+
+        /* Ajuste específico para las columnas */
+        .col-mascota input{
+            margin-bottom: 15px;
+        }
+
+        .col-textos textarea{
+            /* Columna 2 - margin-top para alinear con los inputs, ya que no tiene título h2 */
+            margin-top: 50px; 
+            margin-bottom: 2px;
+        }
+
+        .col-duenio input{
+            margin-bottom: 15px;
+        }
+
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3); /* Fondo semitransparente como en la imagen */
+            display: none; /* Inicialmente oculto */
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            width: 500px;
+            transform: scale(0.9); /* Para que no sea demasiado grande */
+        }
+
+        .modal-icon i {
+            font-size: 60px;
+            color: #1abc9c; /* Verde/Teal de la imagen */
+            margin-bottom: 20px;
+            border: 4px solid #1abc9c;
+            border-radius: 50%;
+            padding: 10px;
+        }
+
+        .modal-message {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #000;
+        }
+
+        .modal-button {
+            background-color: #1abc9c; /* Verde/Teal del botón Aceptar */
+            color: white;
+            border: none;
+            padding: 10px 40px;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        
+        .modal-button:hover {
+            background-color: #16a085;
+        }
+
+        /* Clase para mostrar el modal */
+        .modal-overlay.visible {
+            display: flex;
+        }

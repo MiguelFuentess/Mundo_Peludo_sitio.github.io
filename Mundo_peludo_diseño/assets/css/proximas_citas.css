@@ -1,0 +1,262 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        /* --- SIDEBAR (Reutilizado) --- */
+        .sidebar {
+            width: 280px;
+            background-color: white;
+            border-right: 1px solid #ccc;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .logo i {
+            color: #009688;
+            font-size: 32px;
+        }
+
+        .sidebar-menu {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        .sidebar-menu i {
+            font-size: 24px;
+            color: #333;
+        }
+        
+        /* Estilo activo para el botón de citas */
+        .menu-btn {
+            background-color: #83a5c2;
+            color: #1a1a1a;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 500;
+            flex-grow: 1;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* MAIN CONTENT & HEADER  */
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header con 3 botones */
+        header {
+            height: 130px;
+            border-bottom: 1px solid #aaa;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 300px;
+            gap: 350px; 
+            background-color: white;
+        }
+
+        .action-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+
+        .icon-box {
+            width: 55px;
+            height: 55px;
+            background-color: #7da0c0;
+            border-radius: 8px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+        }
+
+        .icon-box i {
+            font-size: 28px;
+            color: #111;
+        }
+
+        .action-text {
+            font-size: 13px;
+            color: #000;
+            font-weight: 500;
+        }
+
+        /* --- CONTENIDO PRINCIPAL --- */
+        .schedule-container {
+            padding: 20px 80px;
+            flex: 1;
+            overflow-y: auto; 
+        }
+
+        .page-title {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 40px;
+            margin-top: 10px;
+        }
+
+        /* --- SECCIÓN DE FILTROS --- */
+        .filter-section {
+            background-color: #f1f5f9; 
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 250px;
+        }
+
+        .filter-group label {
+            font-size: 14px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .input-with-icon {
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Estilo para los inputs y selects de filtro */
+        .filter-section input[type="date"], 
+        .filter-section select {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 14px;
+            color: #555;
+            -webkit-appearance: none; 
+            -moz-appearance: none; 
+            appearance: none; 
+        }
+
+        /* Estilo para el input de fecha y su icono*/
+        .filter-section input[type="date"]::-webkit-calendar-picker-indicator {
+            background: none;
+            color: transparent;
+            cursor: pointer;
+            position: absolute; 
+            width: 30px;
+            height: 100%;
+            right: 0;
+        }
+        
+        .filter-section .date-icon {
+            position: absolute;
+            right: 15px;
+            color: #555;
+            pointer-events: none; 
+        }
+
+        /* Estilo para el select y su flecha */
+        .filter-section select {
+            background-repeat: no-repeat;
+            background-position: right 10px top 50%;
+            background-size: 10px auto;
+        }
+
+        /* SECCIÓN DE TABLA  */
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .schedule-table th {
+            background-color: #83a5c2; 
+            color: #000;
+            padding: 15px;
+            font-weight: 600;
+            font-size: 14px;
+            border-bottom: 2px solid #5d81a3;
+        }
+
+        .schedule-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            color: #333;
+            font-size: 14px;
+        }
+        
+        .schedule-table tbody tr:hover {
+            background-color: #f7f7f7;
+        }
+
+        .pagination {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+            font-family: Arial, sans-serif;
+        }
+
+        .pagination a {
+            text-decoration: none;
+            color: #333;
+            padding: 8px 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        /* Número seleccionado */
+        .pagination .active {
+            background-color: #009383;
+            color: #fff;
+            border-color: #009383;
+        }
+
+        /* Hover en los demás */
+            .pagination a:not(.active):hover {
+            color: #009383;
+            border-color: #009383;
+        }
+
+        /*  cursor deshabilitado para flechas */
+        .pagination .disabled {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
